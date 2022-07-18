@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+.nav-style{
+    background-color: #333545;
+}
+.search_style{
+
+    margin-left: -10px;
+    padding: 5px 40px;
+}
+.box_input{
+    width: 240px;
+ }
+ .btn-log{
+    background-color: blue;
+    color: white;
+    padding: 5px 40px;
+    margin-left: 65px;
+    font-weight: 700;
+ }
+ .btn-log:hover{
+    color: blue;
+   background-color: white;
+ }
+ .login{
+    text-align: center !important;
+    color: #F90204;
+    font-weight: 900px;
+
+ }
