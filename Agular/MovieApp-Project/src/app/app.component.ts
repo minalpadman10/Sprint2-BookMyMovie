@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { AddmovieService } from './services/addmovie.service';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,17 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MovieApp-Project';
+  public totalItem : number = 0;
+  constructor(private _auth:AuthService,private addmovieservice:AddmovieService){ }
 
-constructor(private _auth:AuthService){
-
+  ngOnInit(): void {
+    this.addmovieservice.getMovies()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
   }
+
+  title = 'Book My Movie';
   LoggedIn(input:boolean){
     if(input){
       return this._auth.loggedIn();
